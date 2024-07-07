@@ -20,14 +20,14 @@
             android:textColor="@color/black"
             android:textSize="40dp"
             android:layout_marginBottom="15dp"
-            android:text="Explore" />
+            android:text="Khám phá" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="35dp"
-            android:text="best Outfits for you" />
+            android:text="Thời trang cho bạn" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -44,7 +44,9 @@
                 android:layout_gravity="center"
                 android:inputType="text|textNoSuggestions"
                 android:paddingLeft="30dp"
-                android:hint="Search items..." />
+                android:imeOptions="actionSearch"
+                android:drawableLeft="@drawable/baseline_search_24"
+                android:hint="Tìm kiếm sản phẩm..." />
 
             <ImageButton
                 android:id="@+id/btnFilter"
@@ -59,6 +61,7 @@
             android:id="@+id/listViewDSSP"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
             android:divider="#00000000"/>
 
     </LinearLayout>

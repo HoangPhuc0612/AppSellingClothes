@@ -7,6 +7,7 @@
     android:paddingTop="20dp"
     android:paddingLeft="20dp"
     android:layout_marginBottom="30dp"
+    android:layout_marginTop="40dp"
     tools:ignore="MissingConstraints">
 
     <androidx.cardview.widget.CardView
@@ -17,15 +18,15 @@
             android:id="@+id/imgNguoiDung"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:srcCompat="@tools:sample/avatars" />
+            android:src="@drawable/account_image" />
     </androidx.cardview.widget.CardView>
     <TextView
-        android:id="@+id/txtTenNguoiDung"
+        android:id="@+id/txtAccountName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginLeft="30dp"
         android:textSize="25dp"
         android:textColor="@color/black"
-        android:text="TextView" />
+        android:text="" />
 </LinearLayout>

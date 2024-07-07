@@ -3,14 +3,14 @@
 
     <item
         android:id="@+id/Home"
-        android:title="Home"
+        android:title="Trang chủ"
         android:icon="@drawable/baseline_home_24"/>
     <item
         android:id="@+id/Catalog"
-        android:title="Catalog"
+        android:title="Bộ sưu tập"
         android:icon="@drawable/baseline_menu_24"/>
     <item
         android:id="@+id/Profile"
-        android:title="Profile"
+        android:title="Hồ sơ"
         android:icon="@drawable/baseline_people_24"/>
 </menu>

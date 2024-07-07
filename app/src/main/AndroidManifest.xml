@@ -2,20 +2,56 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.example.doanfashionapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <permission
+        android:name="com.example.doanfashionapp.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:protectionLevel="signature" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:icon="@drawable/logofashionapp"
+        android:label="Fashion App"
         android:supportsRtl="true"
         android:theme="@style/Theme.DoAnFashionApp"
         tools:targetApi="31">
         <activity
+            android:name=".ActivityDanhGia"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_XuLyThanhToanGioHang"
+            android:exported="false" />
+        <activity
+            android:name=".OrderDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity2DSDONHANG"
+            android:exported="false" />
+        <activity
+            android:name=".ProductsList_For_Brands_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ProductListForCategoryActivity"
+            android:exported="false" />
+        <activity
             android:name=".ActivityThongTinSanPham"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".SearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditProfile"
+            android:exported="false" />
+        <activity
+            android:name=".Signup"
+            android:exported="false" />
+        <activity
+            android:name=".Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,6 +59,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity android:name=".ActivityXuLiThanhToan" />
     </application>
 
 </manifest>

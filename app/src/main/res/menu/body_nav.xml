@@ -5,23 +5,23 @@
         <item
             android:id="@+id/itemHome"
             android:icon="@drawable/baseline_home_24"
-            android:title="Home" />
+            android:title="Trang chủ" />
         <item
             android:id="@+id/itemFavorite"
             android:icon="@drawable/baseline_favorite_black_24dp"
-            android:title="Favorite" />
+            android:title="Yêu thích" />
         <item
             android:id="@+id/itemAboutUs"
             android:icon="@drawable/baseline_article_black_24dp"
-            android:title="About us" />
-        <item
-            android:id="@+id/itemPrivacyPolicy"
-            android:icon="@drawable/baseline_lock_24"
-            android:title="Privacy policy" />
+            android:title="Giới thiệu" />
+<!--        <item-->
+<!--            android:id="@+id/itemPrivacyPolicy"-->
+<!--            android:icon="@drawable/baseline_lock_24"-->
+<!--            android:title="Privacy policy" />-->
         <item
             android:id="@+id/itemSettings"
             android:icon="@drawable/baseline_settings_24"
-            android:title="Settings" />
+            android:title="Cài đặt" />
     </group>
     <group >
         <item android:title="" >
@@ -29,7 +29,7 @@
                 <item
                     android:id="@+id/itemLogOut"
                     android:icon="@drawable/baseline_logout_24"
-                    android:title="Log out" />
+                    android:title="Đăng xuất" />
             </menu>
         </item>
     </group>

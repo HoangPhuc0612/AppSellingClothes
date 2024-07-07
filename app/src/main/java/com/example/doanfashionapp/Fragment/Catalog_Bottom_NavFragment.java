@@ -11,13 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.doanfashionapp.Adapter.ViewPagerAdapter;
-import com.example.doanfashionapp.DAO.DAO_HangSanPham;
-import com.example.doanfashionapp.DTO.HangSanPham;
-import com.example.doanfashionapp.Database.DBHelper;
 import com.example.doanfashionapp.R;
 import com.google.android.material.tabs.TabLayout;
 
-import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.

@@ -1,6 +1,7 @@
 package com.example.doanfashionapp.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +14,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.doanfashionapp.DTO.HangSanPham;
+import com.example.doanfashionapp.DTO.LoaiSanPham;
 import com.example.doanfashionapp.Interface.SelectListener;
+import com.example.doanfashionapp.ProductListForCategoryActivity;
+import com.example.doanfashionapp.ProductsList_For_Brands_Activity;
 import com.example.doanfashionapp.R;
 
 import java.util.ArrayList;
@@ -21,7 +25,7 @@ import java.util.ArrayList;
 public class CustomListViewAdapter_Home_Bottom_Nav extends ArrayAdapter {
 
     private int layout;
-    private ArrayList<HangSanPham> lsHangSP;
+    private ArrayList<LoaiSanPham> lsLoaiSP;
     private Context context;
 
     private SelectListener listener;
@@ -34,12 +38,12 @@ public class CustomListViewAdapter_Home_Bottom_Nav extends ArrayAdapter {
         this.layout = layout;
     }
 
-    public ArrayList<HangSanPham> getLsHangSP() {
-        return lsHangSP;
+    public ArrayList<LoaiSanPham> getLsLoaiSP() {
+        return lsLoaiSP;
     }
 
-    public void setLsHangSP(ArrayList<HangSanPham> lsHangSP) {
-        this.lsHangSP = lsHangSP;
+    public void setLsLoaiSP(ArrayList<LoaiSanPham> lsLoaiSP) {
+        this.lsLoaiSP = lsLoaiSP;
     }
 
     @NonNull
@@ -52,29 +56,41 @@ public class CustomListViewAdapter_Home_Bottom_Nav extends ArrayAdapter {
         this.context = context;
     }
 
-    public CustomListViewAdapter_Home_Bottom_Nav(@NonNull Context context, int resource, ArrayList<HangSanPham> arrayList,SelectListener listener1) {
+    public CustomListViewAdapter_Home_Bottom_Nav(@NonNull Context context, int resource, ArrayList<LoaiSanPham> arrayList,SelectListener listener1) {
         super(context,resource,arrayList);
         this.context=context;
         this.layout=resource;
-        this.lsHangSP=arrayList;
+        this.lsLoaiSP=arrayList;
         this.listener=listener1;
     }
 
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        HangSanPham sp =lsHangSP.get(position);
+        LoaiSanPham sp =lsLoaiSP.get(position);
         if(convertView==null){
             convertView= LayoutInflater.from(context).inflate(layout,null);
         }
         TextView txtTenHang=(TextView) convertView.findViewById(R.id.txtTenHang);
-        txtTenHang.setText(sp.getTenHang());
+        txtTenHang.setText(sp.getTenLoaiSP());
         RecyclerView recyclerView=(RecyclerView) convertView.findViewById(R.id.recyclerViewDSSP);
-        CustomRecyclerViewAdapter_Home_Bottom_Nav adapter = new CustomRecyclerViewAdapter_Home_Bottom_Nav(sp.getListSP(),context,listener);
+        CustomRecyclerViewAdapter_Home_Bottom_Nav adapter = new CustomRecyclerViewAdapter_Home_Bottom_Nav(sp.getDsSP(),context,listener);
         LinearLayoutManager layoutManager=new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false);
         layoutManager.scrollToPosition(0);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
+
+
+        TextView txtSeeAll = (TextView) convertView.findViewById(R.id.txtSeeAll);
+        txtSeeAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, ProductsList_For_Brands_Activity.class);
+                intent.putExtra("CATEGORY_ID", sp.getIdLoaiSP());
+                intent.putExtra("CATEGORY_NAME", sp.getTenLoaiSP());
+                context.startActivity(intent);
+            }
+        });
 
         return convertView;
     }

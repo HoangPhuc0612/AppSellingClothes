@@ -1,6 +1,9 @@
 package com.example.doanfashionapp.DTO;
 
-public class SanPham {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class SanPham implements Parcelable {
     private String idSanPham;
     private int idAnhSanPham;
     private String tenSanPham;
@@ -77,5 +80,42 @@ public class SanPham {
         this.moTaSP = moTaSP;
         this.idBrand = idBrand;
         this.idLoaiSP = idLoaiSP;
+    }
+    protected SanPham(Parcel in) {
+        idSanPham = in.readString();
+        idAnhSanPham = in.readInt();
+        tenSanPham = in.readString();
+        giaSanPham = in.readInt();
+        moTaSP = in.readString();
+        idBrand = in.readString();
+        idLoaiSP = in.readString();
+    }
+
+    public static final Creator<SanPham> CREATOR = new Creator<SanPham>() {
+        @Override
+        public SanPham createFromParcel(Parcel in) {
+            return new SanPham(in);
+        }
+
+        @Override
+        public SanPham[] newArray(int size) {
+            return new SanPham[size];
+        }
+    };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(idSanPham);
+        dest.writeInt(idAnhSanPham);
+        dest.writeString(tenSanPham);
+        dest.writeInt(giaSanPham);
+        dest.writeString(moTaSP);
+        dest.writeString(idBrand);
+        dest.writeString(idLoaiSP);
     }
 }

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "373017962940",
+    "project_id": "doanfashionapp-7c568",
+    "storage_bucket": "doanfashionapp-7c568.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:373017962940:android:3fe9bf32f30dc95bf623b9",
+        "android_client_info": {
+          "package_name": "com.example.doanfashionapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgu4Z9VkPj-Qx5lEkNDYPIyytmX8GTv94"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

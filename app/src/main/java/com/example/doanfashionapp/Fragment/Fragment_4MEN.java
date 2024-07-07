@@ -1,5 +1,6 @@
 package com.example.doanfashionapp.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,11 +8,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import com.example.doanfashionapp.Adapter.CustomGridViewAdapter;
 import com.example.doanfashionapp.DAO.DAO_LoaiSanPham;
 import com.example.doanfashionapp.DTO.LoaiSanPham;
+import com.example.doanfashionapp.ProductListForCategoryActivity;
 import com.example.doanfashionapp.R;
 
 import java.util.ArrayList;
@@ -73,9 +76,19 @@ public class Fragment_4MEN extends Fragment {
         View view=inflater.inflate(R.layout.fragment_4men, container, false);
         gridView=(GridView) view.findViewById(R.id.gridView_4Men);
         DAO_LoaiSanPham dao_loaiSanPham=new DAO_LoaiSanPham(getContext());
-        arrayList=dao_loaiSanPham.loadLoaiSP("4MEN");
+        arrayList=dao_loaiSanPham.loadLoaiSP("Mùa Đông");
         adapter=new CustomGridViewAdapter(arrayList,getContext());
         gridView.setAdapter(adapter);
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                LoaiSanPham selectedCategory = arrayList.get(position);
+                Intent intent = new Intent(getActivity(), ProductListForCategoryActivity.class);
+                intent.putExtra("BRAND_ID", "BR001");
+                intent.putExtra("CATEGORY_ID", selectedCategory.getIdLoaiSP());
+                startActivity(intent);
+            }
+        });
         return view;
     }
 }

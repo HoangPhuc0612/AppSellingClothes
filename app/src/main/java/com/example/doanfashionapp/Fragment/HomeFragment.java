@@ -91,11 +91,11 @@ public class HomeFragment extends Fragment {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.Home:
-                        actionBar.setTitle("Fashion App");
+                        actionBar.setTitle("Trang chủ");
                         loadFragment(new Home_Bottom_NavFragment());
                         return true;
                     case R.id.Catalog:
-                        actionBar.setTitle("Catalog");
+                        actionBar.setTitle("Bộ sưu tập");
                         loadFragment(new Catalog_Bottom_NavFragment());
                         return true;
                     case R.id.Profile:

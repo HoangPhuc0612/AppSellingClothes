@@ -6,12 +6,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-import com.example.doanfashionapp.DTO.HangSanPham;
 import com.example.doanfashionapp.Fragment.Fragment_4MEN;
 import com.example.doanfashionapp.Fragment.Fragment_Highway;
-import com.example.doanfashionapp.Fragment.Fragment_Routine;
-
-import java.util.ArrayList;
 
 public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
@@ -26,8 +22,6 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
                 return new Fragment_4MEN();
             case 1:
                 return new Fragment_Highway();
-            case 2:
-                return new Fragment_Routine();
             default:
                 return new Fragment_4MEN();
         }
@@ -35,7 +29,7 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public int getCount() {
-        return 3;
+        return 2;
     }
 
     @Nullable
@@ -44,16 +38,13 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
         String title="";
         switch (position){
             case 0:
-                title="4 Men";
+                title="Mùa Đông";
                 break;
             case 1:
-                title="Highway";
-                break;
-            case 2:
-                title="Routine";
+                title="Mùa Xuân";
                 break;
             default:
-                title = "4 Men";
+                title = "Mùa Đông";
                 break;
         }
         return title;
